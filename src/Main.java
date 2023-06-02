@@ -1,11 +1,11 @@
-import java.util.Queue;
-import java.util.Stack;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 //        Stack();
-        Queue();
+//        Queue();
+//        priorityQueue();
+//        linkedList();
     }
 
     private static void Stack() {
@@ -27,7 +27,7 @@ public class Main {
         System.out.println(stack.search("Borderlands"));
     }
 
-    private static void Queue(){
+    private static void Queue() {
         Queue<String> queue = new LinkedList<>();
 
         queue.offer("Karen");
@@ -42,5 +42,50 @@ public class Main {
 //        queue.poll();
 
         System.out.println(queue);
+    }
+
+    private static void priorityQueue() {
+        Queue<Double> prioQueue = new PriorityQueue<>(Collections.reverseOrder());
+
+
+        prioQueue.offer(3.0);
+        prioQueue.offer(2.5);
+        prioQueue.offer(4.0);
+        prioQueue.offer(1.5);
+        prioQueue.offer(2.0);
+
+        while (!prioQueue.isEmpty()) {
+            System.out.println(prioQueue.poll());
+        }
+    }
+
+    private static void linkedList() {
+        LinkedList<String> linkedList = new LinkedList<>();
+
+//        linkedList.push("A");
+//        linkedList.push("B");
+//        linkedList.push("C");
+//        linkedList.push("D");
+//        linkedList.push("F");
+//        linkedList.pop();
+
+        linkedList.offer("A");
+        linkedList.offer("B");
+        linkedList.offer("C");
+        linkedList.offer("D");
+        linkedList.offer("F");
+//        linkedList.poll();
+
+        linkedList.add(4, "E");
+        linkedList.remove("E");
+
+        System.out.println(linkedList.indexOf("F"));
+        System.out.println(linkedList.peekFirst());
+        linkedList.addFirst("0");
+        linkedList.addLast("G");
+        String first = linkedList.removeFirst();
+        String last = linkedList.removeLast();
+
+        System.out.println(linkedList);
     }
 }
