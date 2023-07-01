@@ -6,6 +6,7 @@ public class Main {
 //        Queue();
 //        priorityQueue();
 //        linkedList();
+//        arrayList();
     }
 
     private static void Stack() {
@@ -87,5 +88,29 @@ public class Main {
         String last = linkedList.removeLast();
 
         System.out.println(linkedList);
+    }
+
+    private static void arrayList() {
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        long startTime;
+        long endTime;
+        long elapsedTime;
+
+        for (int i = 0; i < 1000000; i++) {
+            arrayList.add(i);
+
+        }
+
+        startTime = System.nanoTime();
+
+//        arrayList.get(0);
+//        arrayList.get(500000);
+        arrayList.get(999999);
+
+        endTime = System.nanoTime();
+
+        elapsedTime = endTime - startTime;
+        System.out.println("ArrayList:\t" + elapsedTime + " ns");
     }
 }
